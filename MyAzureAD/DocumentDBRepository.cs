@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MyAzureAD
+namespace TaskTracker
 {
     public static class DocumentDBRepository<T> where T : class
     {
@@ -20,11 +20,11 @@ namespace MyAzureAD
         public static void Initialize()
         {
 
-            //var endpoint = ConfigurationManager.AppSettings["endpoint"];
-            //var authKey = ConfigurationManager.AppSettings["authKey"];
+            var endpoint = ConfigurationManager.AppSettings["endpoint"];
+            var authKey = ConfigurationManager.AppSettings["authKey"];
 
-            var endpoint = EncryptionHelper.DbEndPoint;
-            var authKey = EncryptionHelper.DBAcessKey;
+            //var endpoint = EncryptionHelper.DbEndPoint;
+            //var authKey = EncryptionHelper.DBAcessKey;
 
             client = new DocumentClient(new Uri(endpoint), authKey);
             CreateDatabaseIfNotExistsAsync().Wait();

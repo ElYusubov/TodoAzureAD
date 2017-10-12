@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 //add these using statements
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using System.Threading.Tasks;
 using System.Web.Configuration;
 
-namespace MyAzureAD
+namespace TaskTracker
 {
     public class EncryptionHelper
     {

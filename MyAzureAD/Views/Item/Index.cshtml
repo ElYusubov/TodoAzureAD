@@ -1,8 +1,8 @@
-﻿@model IEnumerable<MyAzureAD.Models.Item>
+﻿@model TaskTracker.Models.ItemLisModel
 
 @{
     ViewBag.Title = "Daily tasks";
-    ViewBag.Count = Model.Count() == 0? "None": @Model.Count() + " remaining";
+    ViewBag.Count = Model.List.Count() == 0? "None": Model.List.Count() + " remaining";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -12,24 +12,24 @@
     @Html.ActionLink("Create New", "Create")    
 </p>
 <p>
-    Environment: <strong> @ViewData["environment"] </strong>
+    Environment: <strong> @Model.EnvironmentName</strong>
 </p>  
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayName("Name")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayName("Description")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Completed)
+            @Html.DisplayName("Completed")
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.List){
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Name)

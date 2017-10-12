@@ -261,3 +261,5 @@ __pycache__/
 *.pyc
 /MyAzureAD/Properties/PublishProfiles
 /MyAzureAD/appSettings.config
+/app_config_with_values.config
+/MyAzureAD/appSettings.config.local

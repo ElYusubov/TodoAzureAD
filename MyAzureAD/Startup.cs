@@ -1,9 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.Owin;
-using Owin;
+﻿using Owin;
 
-namespace MyAzureAD
+namespace TaskTracker
 {
     public partial class Startup
     {
